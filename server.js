@@ -21,7 +21,7 @@ app.set('view engine', 'ejs'); // this will allow us to use the render and we se
 
 // Database Setup
 const pg = require('pg');
-const client = new pg.Client(process.env.DATABASE_URL);
+// const client = new pg.Client(process.env.DATABASE_URL);
 
 
 
@@ -32,9 +32,9 @@ function homePage(req,res) {
 }
 
 
-client.on('error', err => console.error(err));
+// client.on('error', err => console.error(err));
 
-client.connect().then(() => {
-  console.log('connected to database');
+// client.connect().then(() => {
+//   console.log('connected to database');
   app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
-});
+// });
