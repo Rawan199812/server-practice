@@ -7,6 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <ul>
+    <h1>you have <%=saved.length%> saved</h1> 
+    <% saved.forEach( element => { %>
+        
+        <li>   
+      <h1><%=element.title%></h1>
+      <p><%=element.author%></p>
+      <p><img src="<%=element.image%>"></p>
+      <p><%=element.description%></p>
+      </li>
+      <%})%>
+
+    </ul>
+
+    
 </body>
 </html>

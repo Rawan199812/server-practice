@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <%Details.lenght%>
+    <% Details.forEach( element => { %>
+        
+        <li>   
+      <h1><%=element.title%></h1>
+      <p><%=element.author%></p>
+      <p><img src="<%=element.image%>"></p>
+      <p><%=element.description%></p>
+
+
+      <form action="/books/<%=element.id%>?_method=delete" method="POST">
+          <button>Delete</button>
+      </form>
+      <form action="/books/<%=element.id%>?_method=put" method="POST">
+        <input type="text" name="title"value="<%=element.title%>">
+        <input type="text" name="author"value="<%=element.author%>">
+        <input type="text" name="image"value="<%=element.image%>">
+        <input type="text" name="description"value="<%=element.description%>">
+
+        <button>Update</button>
+    </form>
+
+
+        </li>
+    
+      <% }) %>
+
+    </ul>
+</body>
+</html>
